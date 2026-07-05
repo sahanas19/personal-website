@@ -1,0 +1,30 @@
+---
+const links = [
+  { label: "Email", href: "mailto:sahasubramanian@gmail.com" },
+  { label: "GitHub", href: "https://github.com/sahanas19" },
+  { label: "LinkedIn", href: "#" },
+];
+---
+
+<section id="contact" class="px-6 py-20">
+  <div class="mx-auto max-w-4xl">
+    <h2 class="font-display text-2xl font-semibold text-slate-50">Contact</h2>
+    <p class="mt-4 text-base text-slate-400">The best way to reach me:</p>
+    <ul class="mt-6 flex flex-wrap gap-4">
+      {
+        links.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              target={link.href.startsWith("http") ? "_blank" : undefined}
+              rel="noopener"
+              class="inline-flex items-center rounded-full border border-white/10 px-5 py-2 text-sm font-medium text-slate-200 transition hover:border-indigo-300/40 hover:text-indigo-300"
+            >
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
