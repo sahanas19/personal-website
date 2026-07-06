@@ -1,38 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 68">
-  <mask id="holes">
-    <rect width="64" height="68" fill="#fff" />
-    <ellipse cx="22.8" cy="36.9" rx="1.8" ry="6" transform="rotate(-35 22.8 36.9)" fill="#000" />
-    <ellipse cx="28.3" cy="32.4" rx="1.6" ry="6.5" transform="rotate(-12 28.3 32.4)" fill="#000" />
-    <ellipse cx="34.9" cy="36.3" rx="1.6" ry="5" transform="rotate(12 34.9 36.3)" fill="#000" />
-    <ellipse cx="41.8" cy="36.1" rx="1.8" ry="6" transform="rotate(35 41.8 36.1)" fill="#000" />
-    <ellipse cx="42.6" cy="42.5" rx="1.5" ry="4.5" transform="rotate(55 42.6 42.5)" fill="#000" />
-  </mask>
-
-  <path
-    fill="#1f4a2c"
-    mask="url(#holes)"
-    d="
-      M40.8 19.2
-      L32 32
-      L23.2 19.2
-      L22 34.7
-      L5.1 25.1
-      L16.4 43
-      L6.9 45.3
-      L32 58
-      L57.1 45.3
-      L47.6 43
-      L58.9 25.1
-      L42 34.7
-      Z
-    "
-  />
-  <path d="M32 56 L32 23" stroke="#4d7a56" stroke-width="1.4" stroke-linecap="round" />
-  <path
-    d="M32 58 C 30 61 27 63 23 65"
-    stroke="#1f4a2c"
-    stroke-width="3"
-    stroke-linecap="round"
-    fill="none"
-  />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <circle cx="32" cy="32" r="32" fill="#1d2b22" />
+  <text
+    x="33"
+    y="34"
+    text-anchor="middle"
+    dominant-baseline="central"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-style="italic"
+    font-size="36"
+    fill="#e8f3ec"
+  >S</text>
 </svg>
