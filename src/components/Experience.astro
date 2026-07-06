@@ -1,56 +1,52 @@
 ---
-const roles = [
-  {
-    period: "Present",
-    title: "Manager, Workday Consulting",
-    company: "PwC",
-    description:
-      "Helping organizations navigate the complexity of ERP transformation — turning messy processes into clean, working systems.",
-    isReal: true,
-  },
-  {
-    period: "[20XX–20XX]",
-    title: "[Previous role]",
-    company: "[Company name]",
-    description: "[A line on what you did and the impact you had.]",
-    isReal: false,
-  },
-  {
-    period: "[20XX–20XX]",
-    title: "[Previous role]",
-    company: "[Company name]",
-    description: "[A line on what you did and the impact you had.]",
-    isReal: false,
-  },
-];
+const role = {
+  period: "Present",
+  title: "Manager, Workday Consulting",
+  company: "PwC",
+  description:
+    "Helping organizations navigate the complexity of ERP transformation — turning messy processes into clean, working systems.",
+};
 ---
 
 <section id="experience" class="border-t border-rule px-6 py-16">
   <div class="mx-auto max-w-2xl">
     <p class="font-display text-sm tracking-wide text-ink-soft" data-reveal>Experience</p>
 
-    <ul class="mt-8 divide-y divide-rule">
+    <div
+      class="mt-8 rounded-2xl border border-rule bg-ink/[0.02] p-6 sm:p-8"
+      data-reveal
+    >
+      <div class="flex flex-wrap items-start justify-between gap-x-6 gap-y-2">
+        <div>
+          <div class="flex flex-wrap items-center gap-2.5">
+            <h3 class="font-display text-xl text-ink sm:text-2xl">{role.title}</h3>
+            <span class="rounded-full bg-accent/10 px-2.5 py-0.5 text-xs font-medium tracking-wide text-accent">
+              {role.period}
+            </span>
+          </div>
+          <p class="mt-1 text-sm text-ink-soft">{role.company}</p>
+        </div>
+      </div>
+      <p class="mt-4 max-w-lg text-sm leading-relaxed text-ink-soft">
+        {role.description}
+      </p>
+    </div>
+
+    <div class="mt-4 grid gap-4 sm:grid-cols-2">
       {
-        roles.map((role, i) => (
-          <li data-reveal style={`transition-delay: ${i * 80}ms`}>
-            <div class="group relative flex items-start justify-between gap-6 py-6 pl-4 -ml-4 pr-2">
-              <span class="absolute left-0 top-1/2 h-0 w-px -translate-y-1/2 bg-accent transition-all duration-300 group-hover:h-[60%]" aria-hidden="true" />
-              <div>
-                <h3 class="font-display text-xl text-ink">
-                  {role.title}
-                </h3>
-                <p class="mt-1 text-sm text-ink-soft">{role.company}</p>
-                <p class="mt-2 max-w-md text-sm leading-relaxed text-ink-soft">
-                  {role.description}
-                </p>
-              </div>
-              <div class="shrink-0 pt-1 text-sm tabular-nums text-ink-soft">
-                {role.period}
-              </div>
-            </div>
-          </li>
+        [0, 1].map((i) => (
+          <div
+            data-reveal
+            style={`transition-delay: ${(i + 1) * 80}ms`}
+            class="rounded-2xl border border-dashed border-rule p-6 text-ink-soft/70"
+          >
+            <p class="font-display text-base">+ Add a previous role</p>
+            <p class="mt-1.5 text-sm leading-relaxed">
+              Company, years, and a line on the impact you had.
+            </p>
+          </div>
         ))
       }
-    </ul>
+    </div>
   </div>
 </section>

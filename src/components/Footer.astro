@@ -3,7 +3,10 @@ const year = new Date().getFullYear();
 ---
 
 <footer class="border-t border-rule px-6 py-8">
-  <div class="mx-auto max-w-2xl text-sm text-ink-soft">
+  <div class="mx-auto flex max-w-2xl flex-wrap items-center justify-between gap-4 text-sm text-ink-soft">
     <p>&copy; {year} Sahana Subramanian.</p>
+    <a href="#top" class="inline-flex items-center gap-1.5 transition hover:text-accent">
+      Back to top <span aria-hidden="true">&uarr;</span>
+    </a>
   </div>
 </footer>

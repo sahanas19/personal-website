@@ -1,17 +1,52 @@
 ---
 ---
 
-<section id="top" class="mx-auto max-w-2xl px-6 pb-16 pt-20 sm:pt-28">
-  <h1 class="font-display text-4xl leading-tight text-ink sm:text-5xl">
-    <span class="italic">Sahana Subramanian</span> — Manager, Workday at PwC.
-  </h1>
+<section id="top" class="relative overflow-hidden px-6 pb-16 pt-20 sm:pt-28">
+  <div
+    class="pointer-events-none absolute -top-24 left-1/2 -z-10 h-72 w-[36rem] -translate-x-1/2 rounded-full bg-accent/10 blur-3xl"
+    aria-hidden="true"
+  >
+  </div>
 
-  <div class="mt-8 flex flex-wrap gap-x-8 gap-y-3 text-sm font-medium">
-    <a href="#experience" class="inline-flex items-center gap-1.5 text-ink transition hover:text-accent">
-      See my experience <span aria-hidden="true">&rarr;</span>
-    </a>
-    <a href="#connect" class="inline-flex items-center gap-1.5 text-ink transition hover:text-accent">
-      Get in touch <span aria-hidden="true">&rarr;</span>
-    </a>
+  <div class="mx-auto max-w-2xl">
+    <h1 class="hero-in font-display text-4xl leading-tight text-ink sm:text-5xl">
+      <span class="italic">Sahana Subramanian</span> — Manager, Workday at PwC.
+    </h1>
+
+    <div class="hero-in hero-in-delay-1 mt-8 flex flex-wrap gap-x-8 gap-y-3 text-sm font-medium">
+      <a href="#experience" class="inline-flex items-center gap-1.5 text-ink transition hover:text-accent">
+        See my experience <span aria-hidden="true">&rarr;</span>
+      </a>
+      <a href="#connect" class="inline-flex items-center gap-1.5 text-ink transition hover:text-accent">
+        Get in touch <span aria-hidden="true">&rarr;</span>
+      </a>
+    </div>
   </div>
 </section>
+
+<style>
+  .hero-in {
+    animation: hero-in 0.7s ease both;
+  }
+
+  .hero-in-delay-1 {
+    animation-delay: 0.1s;
+  }
+
+  @keyframes hero-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-in {
+      animation: none;
+    }
+  }
+</style>

@@ -23,6 +23,16 @@
           the next trip, chasing strength gains at the gym, and curating
           meal bowls that taste as good as they look.
         </p>
+
+        <ul class="mt-5 flex flex-wrap gap-2">
+          {
+            ["Plants", "Travel", "Strength training", "Food"].map((tag) => (
+              <li class="rounded-full border border-rule px-3 py-1 text-xs tracking-wide text-ink-soft">
+                {tag}
+              </li>
+            ))
+          }
+        </ul>
       </div>
     </div>
   </div>
