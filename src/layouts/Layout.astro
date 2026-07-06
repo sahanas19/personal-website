@@ -30,7 +30,9 @@ const ogImageURL = new URL("/photo.png", Astro.site);
     <title>{title}</title>
     <meta name="description" content={description} />
 
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content="profile" />
+    <meta property="profile:first_name" content="Sahana" />
+    <meta property="profile:last_name" content="Subramanian" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL} />
