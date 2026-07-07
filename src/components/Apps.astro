@@ -1,0 +1,52 @@
+---
+const apps = [
+  {
+    name: "Notch",
+    href: "https://notch.sahana.cc",
+    description: "Personalized, high-protein meal plans tailored to your goals.",
+  },
+  {
+    name: "Feelique",
+    href: "https://feelique.sahana.cc",
+    description: "Track your moods, see your emotional patterns, and understand yourself better.",
+  },
+];
+---
+
+<section id="apps" class="border-t border-rule px-6 py-16">
+  <div class="mx-auto max-w-2xl">
+    <p class="font-display text-sm tracking-wide text-ink-soft" data-reveal>Apps</p>
+
+    <p class="mt-8 max-w-md text-lg leading-relaxed text-ink" data-reveal>
+      A couple of things I've built on the side.
+    </p>
+
+    <div class="mt-6 grid gap-4 sm:grid-cols-2">
+      {
+        apps.map((app, i) => (
+          <a
+            href={app.href}
+            target="_blank"
+            rel="noopener"
+            data-reveal
+            style={`transition-delay: ${(i + 1) * 80}ms`}
+            class="group rounded-2xl border border-rule p-6 transition hover:border-accent/40"
+          >
+            <div class="flex items-center gap-1.5">
+              <h3 class="font-display text-lg text-ink">{app.name}</h3>
+              <span
+                aria-hidden="true"
+                class="text-ink-soft transition group-hover:translate-x-0.5 group-hover:text-accent"
+              >
+                &rarr;
+              </span>
+            </div>
+            <p class="mt-1.5 text-sm leading-relaxed text-ink-soft">
+              {app.description}
+            </p>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>
