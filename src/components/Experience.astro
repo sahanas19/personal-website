@@ -1,20 +1,52 @@
 ---
-const role = {
-  period: "2022 - Present",
-  title: "Manager, Workday Consulting",
-  company: "PwC",
-};
-
-const previousRoles = [
+const companies = [
   {
-    title: "Workday Financials Consultant",
-    company: "Deloitte",
-    period: "2019 - 2022",
+    name: "PwC Acceleration Centers",
+    duration: "3 years 11 months",
+    roles: [
+      {
+        title: "Manager",
+        period: "June 2024 - Present (2 years 2 months)",
+        location: "Bengaluru, Karnataka, India",
+      },
+      {
+        title: "Senior Associate 2",
+        period: "July 2023 - June 2024 (1 year)",
+        location: "Bengaluru, Karnataka, India",
+      },
+      {
+        title: "Senior Associate",
+        period: "September 2022 - July 2023 (11 months)",
+        location: "Bengaluru, Karnataka, India",
+      },
+    ],
   },
   {
-    title: "Workday Financials Consultant",
-    company: "KPMG Global Services",
-    period: "2018 - 2019",
+    name: "Deloitte",
+    duration: "3 years 2 months",
+    roles: [
+      {
+        title: "Consultant",
+        period: "November 2021 - August 2022 (10 months)",
+        location: "Bengaluru, Karnataka, India",
+      },
+      {
+        title: "Associate Consultant",
+        period: "July 2019 - November 2021 (2 years 5 months)",
+        location: "Bengaluru, Karnataka",
+      },
+    ],
+  },
+  {
+    name: "KPMG Global Services (KGS)",
+    duration: null,
+    roles: [
+      {
+        title: "Workday Financials Functional Consultant",
+        period: "June 2018 - July 2019 (1 year 2 months)",
+        location: "Bengaluru Area, India",
+      },
+    ],
   },
 ];
 ---
@@ -23,41 +55,33 @@ const previousRoles = [
   <div class="mx-auto max-w-2xl">
     <p class="font-display text-sm tracking-wide text-ink-soft" data-reveal>Experience</p>
 
-    <div
-      class="mt-8 rounded-2xl border border-rule bg-ink/[0.02] p-6 sm:p-8"
-      data-reveal
-    >
-      <div class="flex flex-wrap items-start justify-between gap-x-6 gap-y-2">
-        <div>
-          <div class="flex flex-wrap items-center gap-2.5">
-            <h3 class="font-display text-xl text-ink sm:text-2xl">{role.title}</h3>
-            <span class="rounded-full bg-accent/10 px-2.5 py-0.5 text-xs font-medium tracking-wide text-accent">
-              {role.period}
-            </span>
-          </div>
-          <p class="mt-1 text-sm text-ink-soft">{role.company}</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="mt-4 grid gap-4 sm:grid-cols-2">
+    <ol class="mt-8 border-l border-rule">
       {
-        previousRoles.map((prev, i) => (
-          <div
+        companies.map((company, i) => (
+          <li
             data-reveal
             style={`transition-delay: ${(i + 1) * 80}ms`}
-            class="rounded-2xl border border-rule p-6"
+            class="relative pb-10 pl-8 last:pb-0"
           >
-            <div class="flex flex-wrap items-center gap-2">
-              <h4 class="font-display text-base text-ink">{prev.title}</h4>
-              <span class="text-xs font-medium tracking-wide text-ink-soft/70">
-                {prev.period}
-              </span>
+            <span class="absolute -left-[5px] top-1.5 h-2.5 w-2.5 rounded-full bg-accent" />
+
+            <h3 class="font-display text-lg text-ink sm:text-xl">{company.name}</h3>
+            {company.duration && (
+              <p class="mt-0.5 text-xs tracking-wide text-ink-soft/70">{company.duration}</p>
+            )}
+
+            <div class="mt-4 space-y-4">
+              {company.roles.map((role) => (
+                <div>
+                  <h4 class="text-sm font-medium text-ink">{role.title}</h4>
+                  <p class="mt-0.5 text-sm text-ink-soft">{role.period}</p>
+                  <p class="mt-0.5 text-xs text-ink-soft/60">{role.location}</p>
+                </div>
+              ))}
             </div>
-            <p class="mt-1 text-sm text-ink-soft">{prev.company}</p>
-          </div>
+          </li>
         ))
       }
-    </div>
+    </ol>
   </div>
 </section>
