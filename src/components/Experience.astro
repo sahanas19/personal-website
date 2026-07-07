@@ -6,6 +6,23 @@ const role = {
   description:
     "Helping organizations navigate the complexity of ERP transformation — turning messy processes into clean, working systems.",
 };
+
+const previousRoles = [
+  {
+    title: "Consultant",
+    company: "Deloitte",
+    period: "2019 - 2022",
+    description:
+      "Progressed from Associate Consultant to Consultant delivering Workday Financials implementations.",
+  },
+  {
+    title: "Workday Financials Functional Consultant",
+    company: "KPMG Global Services",
+    period: "2018 - 2019",
+    description:
+      "Configured and supported Workday Financials modules for global clients.",
+  },
+];
 ---
 
 <section id="experience" class="border-t border-rule px-6 py-16">
@@ -34,15 +51,21 @@ const role = {
 
     <div class="mt-4 grid gap-4 sm:grid-cols-2">
       {
-        [0, 1].map((i) => (
+        previousRoles.map((prev, i) => (
           <div
             data-reveal
             style={`transition-delay: ${(i + 1) * 80}ms`}
-            class="rounded-2xl border border-dashed border-rule p-6 text-ink-soft/70"
+            class="rounded-2xl border border-rule p-6"
           >
-            <p class="font-display text-base">+ Add a previous role</p>
-            <p class="mt-1.5 text-sm leading-relaxed">
-              Company, years, and a line on the impact you had.
+            <div class="flex flex-wrap items-center gap-2">
+              <h4 class="font-display text-base text-ink">{prev.title}</h4>
+              <span class="text-xs font-medium tracking-wide text-ink-soft/70">
+                {prev.period}
+              </span>
+            </div>
+            <p class="mt-1 text-sm text-ink-soft">{prev.company}</p>
+            <p class="mt-1.5 text-sm leading-relaxed text-ink-soft/80">
+              {prev.description}
             </p>
           </div>
         ))
