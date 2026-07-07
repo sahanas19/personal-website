@@ -1,0 +1,35 @@
+---
+const posts = [
+  {
+    title: "Workday Financials and AI Implementations",
+    status: "Coming soon",
+  },
+];
+---
+
+<section id="writing" class="border-t border-rule px-6 py-16">
+  <div class="mx-auto max-w-2xl">
+    <p class="font-display text-sm tracking-wide text-ink-soft" data-reveal>Writing</p>
+
+    <p class="mt-8 max-w-md text-lg leading-relaxed text-ink" data-reveal>
+      Notes on Workday, ERP, and the occasional detour.
+    </p>
+
+    <ul class="mt-6 space-y-3">
+      {
+        posts.map((post, i) => (
+          <li
+            data-reveal
+            style={`transition-delay: ${(i + 1) * 80}ms`}
+            class="flex flex-wrap items-center justify-between gap-x-6 gap-y-1.5 rounded-2xl border border-rule p-6"
+          >
+            <h3 class="font-display text-base text-ink">{post.title}</h3>
+            <span class="rounded-full bg-accent/10 px-2.5 py-0.5 text-xs font-medium tracking-wide text-accent">
+              {post.status}
+            </span>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
