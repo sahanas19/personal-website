@@ -23,10 +23,14 @@ const links = [
               href={link.href}
               target={link.href.startsWith("http") ? "_blank" : undefined}
               rel="noopener"
-              class="inline-flex items-center gap-1.5 text-ink transition hover:text-accent"
+              class="group relative inline-flex items-center gap-1.5 text-ink transition hover:text-accent"
             >
               {link.label}
-              <span aria-hidden="true">&rarr;</span>
+              <span aria-hidden="true" class="transition-transform group-hover:translate-x-1">&rarr;</span>
+              <span
+                aria-hidden="true"
+                class="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-accent transition-transform duration-300 group-hover:scale-x-100"
+              />
             </a>
           </li>
         ))
